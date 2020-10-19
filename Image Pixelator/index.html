@@ -1,0 +1,47 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Image Pixelator</title>
+        <meta name="description" content="Pixelate an image of your choosing and download the results.">
+        <meta name="author" content="Ariel Sievers">
+
+        <link rel="stylesheet" href="src/css/styles.min.css">
+
+        <script src="src/js/pixelator.min.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <header>
+                <h1>Image Pixelator</h1>
+                <label for="file" class="btn">
+                    <input id="file" class="btn btn__upload" type="file" accept="image/*">
+                    Upload Image
+                </label>
+            </header>
+            <div class="grid">
+                <div class="grid__item">
+                    <img id="img--original" src="#" alt="">
+                </div>
+                <div class="flex grid__item grid__item--hidden">
+                    <div class="wrapper flex__item">
+                        <label class="factor factor__label" for="factor">Pixelation Rate: <span class="factor__output"></span></label>
+                        <input id="factor" class="factor factor__range" type="range" min="0" max="99" step="1" value="20"/>
+                    </div>
+                    <button type="button" class="btn btn__pixelate flex__item">Pixelate</button>
+                    <a href="#" download="#" id="download" class="flex__item flex__item--hidden">
+                        <button type="button" class="btn btn__download">Download</button>
+                    </a>
+                </div>
+                <div class="grid__item">
+                    <canvas id="canvas"></canvas>
+                    <img id="img--pixelated" src="#" alt="">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
