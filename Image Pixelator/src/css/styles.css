@@ -50,7 +50,7 @@ a {
 .flex {
     display: flex;
     flex-direction: column;
-    flex-grow: 0;
+    width: 80%;
 }
 
 .flex__item.btn__pixelate {
@@ -60,9 +60,10 @@ a {
 .grid {
     display: grid;
     grid-template-columns: 40% 1fr 40%;
-    height: 500px;
+    min-height: 500px;
+    height: 100%;
     border: 2px dashed dimgrey;
-    padding: 0 3rem;
+    padding: 3rem;
 }
 
 .grid__item {
@@ -111,7 +112,7 @@ img {
     cursor: pointer;
 }
 
-.slider::-moz-range-thumb {
+.factor__range::-moz-range-thumb {
     width: 15px;
     height: 15px;
     border-radius: 50%;
@@ -121,4 +122,50 @@ img {
 
 [class*="--hidden"] {
     visibility: hidden;
+}
+
+@media (max-width: 1187px) {
+   .grid {
+       padding: 1rem;
+   }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(3, auto);
+        row-gap: 20px;
+    }
+}
+
+@media (min-width: 2100px) {
+    header label, .flex, .flex__item, .btn__download {
+        font-size: larger !important;
+    }
+
+    .factor {
+        height: 15px;
+    }
+
+    .factor__range {
+        margin-top: 1.25rem;
+        margin-bottom: 2rem;
+    }
+
+    .factor__range::-webkit-slider-thumb {
+        height: 28px;
+        width: 28px;
+    }
+
+    .factor__range::-moz-range-thumb {
+        height: 28px;
+        width: 28px;
+    }
 }
